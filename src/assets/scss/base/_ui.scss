@@ -1,0 +1,107 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+body {
+    -webkit-text-size-adjust: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+body b {
+    font-weight: 700;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+
+    @include breakpoint(lg) {
+        width: 2px;
+        height: 10px;
+    }
+}
+
+::-webkit-scrollbar-track {
+    background: #f7f7f7;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+main {
+    margin-top: 60px;
+    min-height: calc(max(calc(100vh - 614px), 650px));
+
+    @include breakpoint(md) {
+        margin-top: 70px;
+        min-height: calc(max(calc(100vh - 614px), 570px));
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 80px;
+    }
+
+    @include breakpoint(xl) {
+        margin-top: 60px;
+    }
+}
+
+.hide {
+    display: none!important;
+}
+
+#page {
+    position: relative;
+    min-width: 280px;
+    min-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#page::before {
+    content: '';
+}
+
+#page.bg-overlay::before {
+    // background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.5s ease;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    max-width: 1260px;
+    box-sizing: border-box;
+
+    @include breakpoint(md) {
+        padding: 0 30px;
+    }
+}
+
+input {
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    box-sizing: content-box;
+}

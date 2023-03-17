@@ -1,0 +1,13 @@
+@import 'plugins/swiper-bundle';
+@import '@fancyapps/ui/src/Fancybox/fancybox.scss';
+
+@import 'base/mixins';
+@import 'base/normalize';
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/ui';
+
+@import 'includes/header';
+@import 'includes/footer';
+
+@import 'pages/index';
