@@ -1,0 +1,325 @@
+@import "_header.html"
+
+<main id="main">
+    <div class="catalog-page">
+        <section class="catalog">
+            <div class="container">
+                <div class="catalog__wrapper">
+                    <div class="overlay"></div>
+                    <div class="filters__column">
+                        <div class="filters__top">
+                            <button class="filters__close js-catalog-menu-toggler"><span>Фильтры</span>
+                                <i class="fa-regular fa-xmark"></i></button>
+                        </div>
+
+                        <div class="filters__accordion-wrapper">
+                            <div class="bx-filter bx-blue">
+                                <form name="_form" action="/catalog/sensors/" method="get" class="smartfilter">
+                                    <div class="filter__inner">
+
+                                        <div class="filter__category-list">
+                                            <div class="filter__category-item">
+                                                Алюминиевые радиторы
+                                            </div>
+                                            <div class="filter__category-item">
+                                                Биметаллические радиаторы
+                                            </div>
+                                            <div class="filter__category-item">
+                                                Стальные панельные радиаторы
+                                            </div>
+
+                                        </div>
+
+                                        <div class="filter__group">
+                                            <h3 class="filter__subtitle js-menu-accordion__trigger">
+                                                <span>Бренд</span>
+                                                <i class="fa-sharp fa-regular fa-angle-up"></i>
+                                            </h3>
+                                            <div class="js-menu-accordion__content filter__item accordion-content">
+                                                <label for="filter1" class="main-checkbox">
+                                                    <input id="filter1" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>BIPLUS</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>KZTO</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>Лемакс</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>Рифар</div>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                        <div class="filter__group ">
+
+                                            <div class="filter__label filter__subtitle js-menu-accordion__trigger">
+                                                <span>Высота, см</span>
+                                                <i class="fa-sharp fa-regular fa-angle-up"></i>
+                                            </div>
+                                            <div class="filter__item js-menu-accordion__content  accordion-content"
+                                                 data-role="bx_filter_block" style="max-height: 136px;">
+                                                <div class="filter__toggle-content">
+                                                    <div class="filter__row">
+                                                        <div class="filter__input-wrapper">
+                                                            <span>От</span>
+                                                            <input class="min-price" type="text" name="arrFilter_P1_MIN"
+                                                                   id="arrFilter_P1_MIN" value="" size="5"
+                                                                   onkeyup="smartFilter.keyup(this)"
+                                                                   placeholder="25">
+                                                        </div>
+                                                        <div class="filter__input-wrapper">
+
+                                                            <span>До</span>
+                                                            <input class="max-price" type="text" name="arrFilter_P1_MAX"
+                                                                   id="arrFilter_P1_MAX" value="" size="5"
+                                                                   onkeyup="smartFilter.keyup(this)"
+                                                                   placeholder="180">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="filter__group">
+                                            <h3 class="filter__subtitle js-menu-accordion__trigger">
+                                                Фильтр
+                                                <i class="fa-sharp fa-regular fa-angle-up"></i>
+                                            </h3>
+                                            <div class="js-menu-accordion__content filter__item accordion-content">
+                                                <label for="filter1" class="main-checkbox">
+                                                    <input id="filter1" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>Значение фильтра</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>KZTO</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>Лемакс</div>
+                                                </label>
+                                                <label for="filter2" class="main-checkbox">
+                                                    <input id="filter2" name="checkbox-group" type="checkbox"/>
+                                                    <span class="checkbox__mark"><i
+                                                            class="fa-regular fa-check"></i></span>
+                                                    <div>Рифар</div>
+                                                </label>
+
+                                            </div>
+                                        </div>
+                                    </div><!--//row-->
+                                    <div class="filter__bottom">
+                                        <input class="btn btn-blue filter__btn" type="button" id="set_filter"
+                                               name="set_filter" value="Показать товары">
+                                        <input class="btn filter__reset btn-gray" type="button" id="del_filter" name="del_filter"
+                                               value="Сбросить фильтр">
+                                        <div class="bx-filter-popup-result right" id="modef" style="display:none">
+                                            Выбрано: <span id="modef_num">0</span> <span class="arrow"></span>
+                                            <br>
+                                            <a href="/catalog/sensors/filter/clear/apply/" target="">Показать</a>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="catalog__column">
+                        <div class="category-filter">
+                            <a href="" class="category-filter__item">
+                                <div class="category-filter__img">
+                                    <img src="assets/images/categ3.png" alt="">
+                                </div>
+                                <div class="category-filter__title">Алюминиевые радиаторы</div>
+                            </a>
+                            <a href="" class="category-filter__item">
+                                <div class="category-filter__img">
+                                    <img src="assets/images/categ1.png" alt="">
+                                </div>
+                                <div class="category-filter__title">Алюминиевые радиаторы</div>
+                            </a>
+                            <div class="category-filter__item">
+                                <div class="category-filter__img">
+                                    <img src="assets/images/categ2.png" alt="">
+                                </div>
+                                <div class="category-filter__title">Алюминиевые радиаторы</div>
+                            </div>
+                            <div class="category-filter__item">
+                                <div class="category-filter__img">
+                                    <img src="assets/images/categ4.png" alt="">
+                                </div>
+                                <div class="category-filter__title">Алюминиевые радиаторы</div>
+                            </div>
+
+                        </div>
+                        <div class="catalog__filters-btns">
+                            <button class="btn filters-btn js-catalog-menu-toggler">
+                                <i class="fa-light fa-filter-list"></i>
+                                Фильтры
+                            </button>
+                            <div class="sorting__item select select__container">
+                                <button class="btn sorting-btn select__head sorting__head">    <span class="sorting__result select__code"
+                                >Сначала популярные</span
+                                >
+                                    <i class="fa-regular fa-chevron-down"></i>
+                                </button>
+                                <ul class="sorting__list select__list select">
+                                    <li  class="select__title">
+                                        Сортировать:
+                                    </li>
+                                    <li data-code="По популярности" class="select__item active">
+                                        Сначала дешевые
+                                    </li>
+                                    <li data-code="По убыванию" class="select__item">
+                                        Сначала дорогие
+                                    </li>
+                                    <li data-code="По возрастанию" class="select__item">
+                                        Сначала популярные
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="catalog__container">
+                            <a class="product-item" href="">
+                                <div class="product-item__inner">
+                                    <div class="product-item__label"
+                                         style="background-color: #FFFFFF; color: #FE5603; border:  1px solid #FE5603">
+                                        % Снижение цены
+                                    </div>
+                                    <div class="product-item__picture"
+                                         style="background:  url(assets/images/product4.png) center no-repeat; background-size:  contain;"></div>
+                                    <h3 class="product-item__subtitle">Теплоприбор АР-1 350-3</h3>
+                                    <div class="product-item__price-wrapper">
+                                        <div class="product-item__price">2 790 ₽</div>
+                                        <div class="product-item__price-old">3 290 ₽</div>
+                                    </div>
+                                    <button class="btn btn-blue">В корзину</button>
+                                </div>
+                            </a>
+                            <a class="product-item" href="">
+                                <div class="product-item__inner">
+                                    <div class="product-item__label"
+                                         style="background-color: #FFFFFF; color: #FE5603; border:  1px solid #FE5603">
+                                        % Снижение цены
+                                    </div>
+                                    <div class="product-item__picture"
+                                         style="background:  url(assets/images/product2.png) center no-repeat; background-size:  contain;"></div>
+                                    <h3 class="product-item__subtitle">Теплоприбор АР-1 350-3</h3>
+                                    <div class="product-item__price-wrapper">
+                                        <div class="product-item__price">2 790 ₽</div>
+                                        <div class="product-item__price-old">3 290 ₽</div>
+                                    </div>
+                                    <button class="btn btn-blue">В корзину</button>
+                                </div>
+                            </a>
+                            <a class="product-item" href="">
+                                <div class="product-item__inner">
+                                    <div class="product-item__label"
+                                         style="background-color: #FFFFFF; color: #FE5603; border:  1px solid #FE5603">
+                                        % Снижение цены
+                                    </div>
+                                    <div class="product-item__picture"
+                                         style="background:  url(assets/images/product4.png) center no-repeat; background-size:  contain;"></div>
+                                    <h3 class="product-item__subtitle">Теплоприбор АР-1 350-3</h3>
+                                    <div class="product-item__price-wrapper">
+                                        <div class="product-item__price">2 790 ₽</div>
+                                        <div class="product-item__price-old">3 290 ₽</div>
+                                    </div>
+                                    <button class="btn btn-blue">В корзину</button>
+                                </div>
+                            </a>
+                            <a class="product-item" href="">
+                                <div class="product-item__inner">
+                                    <div class="product-item__label"
+                                         style="background-color: #FFFFFF; color: #FE5603; border:  1px solid #FE5603">
+                                        % Снижение цены
+                                    </div>
+                                    <div class="product-item__picture"
+                                         style="background:  url(assets/images/product2.png) center no-repeat; background-size:  contain;"></div>
+                                    <h3 class="product-item__subtitle">Теплоприбор АР-1 350-3</h3>
+                                    <div class="product-item__price-wrapper">
+                                        <div class="product-item__price">2 790 ₽</div>
+                                        <div class="product-item__price-old">3 290 ₽</div>
+                                    </div>
+                                    <button class="btn btn-blue">В корзину</button>
+                                </div>
+                            </a>
+                            <a class="product-item" href="">
+                                <div class="product-item__inner">
+                                    <div class="product-item__label"
+                                         style="background-color: #FFFFFF; color: #FE5603; border:  1px solid #FE5603">
+                                        % Снижение цены
+                                    </div>
+                                    <div class="product-item__picture"
+                                         style="background:  url(assets/images/product3.png) center no-repeat; background-size:  contain;"></div>
+                                    <h3 class="product-item__subtitle">Теплоприбор АР-1 350-3</h3>
+                                    <div class="product-item__price-wrapper">
+                                        <div class="product-item__price">2 790 ₽</div>
+                                        <div class="product-item__price-old">3 290 ₽</div>
+                                    </div>
+                                    <button class="btn btn-blue">В корзину</button>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="pagination">
+
+                        </div>
+                        <div class="page__pagination-wrapper">
+                            <div class="load-more__wrapper">
+                                <button class="btn btn-blue load-more__btn">Показать еще <i
+                                        class="fa-light fa-arrow-down"></i>
+                                </button>
+                                <div class="load-more__text">
+                                <span class="pagination__item-active js-posts-counter">
+                                                8                                            </span> из <span
+                                        class="pagination__item"> 11 </span> радиаторов
+                                </div>
+                            </div>
+
+                            <div class="navigation pagination">
+                                <div class="nav-links"><a class="prev page-numbers"
+                                                          href="https://szpk-lift.ru/news/page/1/">Пред</a>
+                                    <a class="page-numbers" href="https://szpk-lift.ru/news/page/1/">1</a>
+                                    <span aria-current="page" class="page-numbers current">2</span>
+                                    <a class="page-numbers" href="https://szpk-lift.ru/news/page/3/">3</a>
+                                    <a class="page-numbers" href="https://szpk-lift.ru/news/page/4/">4</a>
+                                    <span class="page-numbers dots">…</span>
+                                    <a class="page-numbers" href="https://szpk-lift.ru/news/page/6/">6</a>
+                                    <a class="next page-numbers" href="https://szpk-lift.ru/news/page/3/">След</a></div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+<!-- Main::End-->
+
+
+@import "_footer.html"</html>

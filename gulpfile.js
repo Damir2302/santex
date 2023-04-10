@@ -105,6 +105,7 @@ function pughtml(cb) {
 function html(cb) {
     return src(path.src.html, {base: srcPath})
         .pipe(htmlImport('./src/includes/'))
+        .pipe(frontMatter({ property: 'data' }))
         .pipe(dest(path.build.html))
         .pipe(browserSync.reload({stream: true}));
 
@@ -233,7 +234,7 @@ function jsPlugins(cb) {
         pathTo.resolve('node_modules', 'jquery/*/jquery.min.js'),
         pathTo.resolve('node_modules', 'swiper/swiper-bundle.min.js'),
         pathTo.resolve('node_modules', 'inputmask/*/jquery.inputmask.min.js'),
-        pathTo.resolve('node_modules', 'ymaps-touch-scroll/*/ymaps-touch-scroll.js'),
+        pathTo.resolve('src', 'assets/js/ymaps-touch-scroll.js'),
         pathTo.resolve('node_modules', '@fancyapps/ui/dist/fancybox.umd.js')
 	])
     .pipe(plumber({
@@ -317,7 +318,7 @@ function imgWatch(cb) {
 
 function img(cb) {
     return src(path.src.img)
-        .pipe(tiny())
+        // .pipe(tiny())
         .pipe(dest(path.build.img))
         .pipe(browserSync.reload({stream: true}));
 

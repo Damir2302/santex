@@ -1,3 +1,8 @@
+$black: #2B2A29;
+$blue: #005DB4;
+$orange: #FE5603;
+
+
 @import 'plugins/swiper-bundle';
 @import '@fancyapps/ui/src/Fancybox/fancybox.scss';
 
@@ -7,7 +12,16 @@
 @import 'base/reset';
 @import 'base/ui';
 
+
 @import 'includes/header';
 @import 'includes/footer';
+@import 'components/breadcrumbs';
 
 @import 'pages/index';
+@import 'pages/category';
+@import 'pages/catalog';
+@import 'pages/news';
+@import 'pages/sales';
+@import 'pages/product';
+@import 'pages/contacts';
+

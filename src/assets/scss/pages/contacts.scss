@@ -1,0 +1,136 @@
+.contacts {
+  margin-bottom: 76px;
+}
+
+.contacts__info-item {
+  margin-bottom: 20px;
+}
+
+.contacts__info-name {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.contacts__info-value {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.contacts__inner {
+  margin-bottom: 30px;
+  @include breakpoint(lg) {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 4fr 8fr;
+    margin-bottom: 46px;
+  }
+  @include breakpoint(xl) {
+    margin-bottom: 62px;
+    grid-column-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contacts__info {
+  margin-bottom: 76px;
+  @include breakpoint(lg) {
+    margin-bottom: 0;
+  }
+}
+
+.map {
+  @include breakpoint(lg) {
+    height: 380px !important;
+  }
+  @include breakpoint(xl) {
+    height: 472px !important;
+  }
+}
+
+.form-wrapper {
+  label {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .main-checkbox {
+    display: flex;
+    margin-bottom: 25px;
+  }
+
+  input {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #7C7B7B;
+    padding: 16px 4px;
+    border-bottom: 1px solid #E8E8E8;
+  }
+
+  textarea {
+    padding: 11px 15px;
+    color: #7C7B7B;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    display: block;
+    border: 1px solid #C4D7E8;
+    border-radius: 10px;
+    width: 100%;
+    resize: none;
+    margin-bottom: 30px;
+  }
+
+  .btn {
+    padding: 19px 30px;
+    display: inline-block;
+    color: #FFFFFF;
+    width: unset;
+    margin-bottom: 37px;
+  }
+
+  .main-checkbox {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: #7C7B7B;
+    width: unset;
+
+    a {
+      color: $blue;
+    }
+  }
+
+  @include breakpoint(lg) {
+    display: grid;
+    grid-column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @include breakpoint(xl) {
+    grid-column-gap: 30px;
+  }
+}
+
+.contacts__form-info {
+  margin-bottom: 30px;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+
+  a {
+    display: block;
+    font-weight: 600;
+  }
+
+  @include breakpoint(lg) {
+    a {
+      display: inline;
+    }
+  }
+}
+
+.form-column {
+
+}

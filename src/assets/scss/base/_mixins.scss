@@ -4,7 +4,7 @@ $sm: 576px;
 $md: 744px;
 $lg: 1024px;
 $bg: 1260px;
-$xl: 1340px;
+$xl: 1660px;
 $hd: 1920px;
 
 @mixin breakpoint($point) {
@@ -76,4 +76,66 @@ $hd: 1920px;
     -webkit-line-clamp: $val;
     line-clamp: $val;
     -webkit-box-orient: vertical;
+}
+
+@mixin flex-items($percent) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+
+    .flex-child {
+        padding: 5px;
+        flex: 0 0 $percent;
+    }
+    @include breakpoint(lg) {
+        margin: -10px;
+
+        .flex-child {
+            padding: 10px;
+            flex: 0 0 $percent;
+        }
+    }
+
+    //@include breakpoint(hd) {
+    //  margin: -20px;
+    //
+    //  .flex-child {
+    //    padding: 20px;
+    //    flex-basis: $percent;
+    //  }
+    //}
+}
+
+
+
+%photo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin proportional_picture($width, $height) {
+    padding-bottom: calc($height * 100% / $width);
+    height: 0;
+}
+
+@mixin proportional_picture50($width, $height) {
+    padding-bottom: calc($height * 50% / $width);
+    height: 0;
+}
+
+@mixin section_margin {
+    margin-top: 30px;
+
+    @include breakpoint(md) {
+        margin-top: 35px;
+    }
+
+    @include breakpoint(lg) {
+        margin-top: 40px;
+    }
+
+    @include breakpoint(hd) {
+        margin-top: 50px;
+    }
 }

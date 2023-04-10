@@ -1,0 +1,52 @@
+.breadcrumbs {
+  font-family: 'Exo 2';
+
+  margin-bottom: 20px;
+
+  @include breakpoint(lg) {
+
+    margin-bottom: 42px;
+  }
+}
+
+.breadcrumbs-wrapper {
+  //display: none;
+
+  //@include breakpoint(md) {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  //}
+}
+
+.breadcrumbs-item {
+  color: $blue;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+
+  //@include breakpointMax(xl) {
+  max-width: 360px;
+  @include textLimit(1);
+  //}
+}
+
+.breadcrumbs-item span {
+  color: #A4A4A3;
+}
+
+.breadcrumbs-separator::after {
+  content: "";
+  margin: 0 8px;
+  background: $blue;
+  display: block;
+  width: 13px;
+  height: 1px;
+}
+
+.title__container {
+  background: #E8EEF1;
+  border-radius: 10px;
+  padding: 30px;
+  margin-bottom: 17px;
+}
