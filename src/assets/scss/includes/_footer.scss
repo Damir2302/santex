@@ -247,10 +247,11 @@
 
 .footer__bottom div {
   margin-top: 10px;
-  a {
-    transition: .5s;
+}
 
-  }
+.footer__bottom span,
+.footer__bottom a {
+  transition: .5s;
 }
 
 .footer__bottom div a:hover {
@@ -261,6 +262,6 @@
   cursor: default;
 }
 
-.footer__developers a:hover + span {
+.footer__developers:hover * {
   color: $orange;
 }
