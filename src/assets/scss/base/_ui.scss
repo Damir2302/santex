@@ -156,7 +156,7 @@ button {
   padding: 12px 30px;
   border-radius: 5px;
   @include breakpoint(lg) {
-
+cursor: pointer;
     transition: .4s;
 
   }

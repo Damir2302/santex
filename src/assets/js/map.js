@@ -1,38 +1,59 @@
-$(document).ready(function() {
-
+document.addEventListener("DOMContentLoaded", () => {
     // Yandex карта page contacts
 
 
-    if($("#map").length) {
+    if ($('#contacts-map').length) {
 
-        function addYaMaps() {
-            var myMap;
-            ymaps.ready(init);
+        ymaps.ready(function () {
+            let coords = document.querySelector("#contacts-map").dataset.coord.split(',')
+            let contactMap = new ymaps.Map("contacts-map", {
+                // Координаты центра карты.
+                // Порядок по умолчнию: «широта, долгота».
+                center: [coords[0], coords[1]],
+                // Уровень масштабирования. Допустимые значения:
+                // от 0 (весь мир) до 19.
+                zoom: 15,
+                // Элементы управления
+                // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/controls/standard-docpage/
+                controls: [],
+            });
+            let latitude = coords[0];
 
-            function init() {
-                myMap = new ymaps.Map('map', {
-                    center: [55.594157, 37.352406],
-                    zoom: 16,
-                    controls: []
-                }),
-                    myPlacemark = new ymaps.Placemark([55.593857, 37.351900], {
-                        // balloonContentHeader: '',
-                        balloonContentBody: "text",
-                        // balloonContentFooter: "+7 (925) 603-78-22<br>+7 (926) 263-02-69<br>info@magixkalyan.ru",
+            let longitude = coords[1];
 
-                    }, {
-                        // iconLayout: 'default#image',
-                        // iconImageHref: '/local/templates/avangard/images/map-pin.svg',
-                        // iconImageSize: [30, 42],
-                        // iconImageOffset: [-37, -45],
-                        // balloonOffset: [-25, -5]
-                    });
-                myMap.geoObjects.add(myPlacemark);
-                ymapsTouchScroll(myMap, {preventScroll: true, preventTouch: true});
-            }
-        }
+            // Добавление метки
+            // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
+            var myPlacemark = new ymaps.Placemark(
+                [coords[0], coords[1]],
+                {
+                    // Хинт показывается при наведении мышкой на иконку метки.
+                    // hintContent: 'Содержимое всплывающей подсказки',
+                    // Балун откроется при клике по метке.
+                    // balloonContent: 'Содержимое балуна'
+                    hintContent: "",
+                },
+                {
+                    iconLayout: "default#image",
+                    // Своё изображение иконки метки.
 
-        addYaMaps();
+                    iconImageHref: `${home_dir}/images/map.svg`,
+
+
+                    // Размеры метки.
+                    iconImageSize: [45, 45],
+                    iconImageOffset: [-30, -45],
+                }
+            );
+
+            // После того как метка была создана, добавляем её на карту.
+            contactMap.geoObjects.add(myPlacemark);
+            contactMap
+                .setBounds(contactMap.geoObjects.getBounds(), {checkZoomRange: true})
+                .then(function () {
+                    if (contactMap.getZoom() > 15) contactMap.setZoom(15);
+                });
+            ymapsTouchScroll(contactMap);
+        });
     }
 
 })

@@ -10,115 +10,68 @@
     <link rel="stylesheet" href="assets/css/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <!--    <link rel="stylesheet" href="assets/css/fancybox.min.css">-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"/>
     <!-- Styles::End-->
     <!-- Yandex map-->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_ru" type="text/javascript"></script>
 </head>
 
 <body>
-    <div id="page">
-        <!-- Header::Start-->
+<div id="page">
+    <!-- Header::Start-->
 
-        <header class="header" id="header">
-            <div class="header__top">
-                <div class="container">
-                    <div class="header__mobile">
-                        <div class="header__mobile-logo"><a href="/"><img src="assets/images/logo.svg" alt="logo" /></a>
-                        </div>
-                        <div class="header__mobile-phones"><a href="tel:+7 (495) 730-11-53">+7 (495) 730-11-53</a><a
-                                href="tel:+7 (495) 741-87-97">+7 (495) 741-87-97</a></div>
-                        <div class="header__mobile-burger" id="burger"></div>
+    <header class="header" id="header">
+    <div class="header__top">
+        <div class="container">
+            <div class="header__mobile">
+                <div class="header__mobile-logo"><a href="/"><img src="assets/images/logo.svg" alt="logo" /></a></div>
+                <div class="header__mobile-phones"><a href="tel:+7 (495) 730-11-53">+7 (495) 730-11-53</a><a href="tel:+7 (495) 741-87-97">+7 (495) 741-87-97</a></div>
+                <div class="header__mobile-burger" id="burger"></div>
+            </div>
+            <div class="header__top-wrap">
+                <nav class="navbar" id="navbar">
+                    <ul class="navbar-left">
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">О компании</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Продукция</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Распродажа</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Акции & Новости</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Оптовые продажи</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Доставка</a></li>
+                        <li class="navbar__item"><a class="navbar__item-link" href="#">Контакты</a></li>
+                    </ul>
+                    <div class="navbar-right">
+                        <div class="navbar__contact"><a href="tel:+7 (495) 730-11-53">+7 (495) 730-11-53</a></div>
+                        <div class="navbar__contact"><a href="tel:+7 (495) 741-87-97">+7 (495) 741-87-97</a></div>
+                        <div class="navbar__contact navbar__contact--mail"><a href="mailto:info@santehprom-r.ru">info@santehprom-r.ru</a></div>
                     </div>
-                    <div class="header__top-wrap">
-                        <nav class="navbar" id="navbar">
-                            <ul class="navbar-left">
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">О компании</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Продукция</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Распродажа</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Акции & Новости</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Оптовые продажи</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Доставка</a></li>
-                                <li class="navbar__item"><a class="navbar__item-link" href="#">Контакты</a></li>
-                            </ul>
-                            <div class="navbar-right">
-                                <div class="navbar__contact"><a href="tel:+7 (495) 730-11-53">+7 (495) 730-11-53</a>
-                                </div>
-                                <div class="navbar__contact"><a href="tel:+7 (495) 741-87-97">+7 (495) 741-87-97</a>
-                                </div>
-                                <div class="navbar__contact navbar__contact--mail"><a
-                                        href="mailto:info@santehprom-r.ru">info@santehprom-r.ru</a></div>
-                            </div>
-                            <div class="navbar-callback"><i class="far fa-headset"></i><span>Заказать звонок</span>
-                            </div>
-                        </nav>
+                    <div class="navbar-callback"><i class="far fa-headset"></i><span>Заказать звонок</span></div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="container">
+            <div class="header__bottom-wrap">
+                <div class="header__bottom-left">
+                    <div class="header__logo"><a href="/"><img src="assets/images/logo.svg" alt="logo" /></a></div>
+                    <div class="header__cat"><i class="far fa-bars-sort"></i><i class="far fa-xmark"></i><span>Каталог</span></div>
+                    <div class="header__search">
+                        <div class="header__search-input">
+                            <input type="search" name="search" placeholder="Поиск по сайту" autocomplete="off" />
+                        </div>
+                        <div class="header__search-icon"><i class="far fa-search"></i></div>
+                    </div>
+                </div>
+                <div class="header__bottom-right">
+                    <div class="header__action">
+                        <div class="header__compare"><i class="far fa-align-left"></i><span>0</span></div>
+                        <div class="header__favourite"><i class="far fa-heart"></i><span>0</span></div>
+                    </div>
+                    <div class="header__cart"><i class="far fa-cart-shopping"></i>
+                        <p><span>В корзине</span> <span style="display:block;font-weight:300;color:#2B2A29;">0</span> <span>товаров</span></p>
                     </div>
                 </div>
             </div>
-            <div class="header__bottom">
-                <div class="container">
-                    <div class="header__bottom-wrap">
-                        <div class="header__bottom-left">
-                            <div class="header__logo"><a href="/"><img src="assets/images/logo.svg" alt="logo" /></a>
-                            </div>
-                            <div class="header__cat-btn"><i class="far fa-bars-sort"></i><i
-                                    class="far fa-xmark"></i><span>Каталог</span></div>
-                            <div class="header__catalog">
-                                <ul>
-                                    <li class="header__catalog-item">
-                                        <a class="header__catalog-link" href="#">Радиаторы</a>
-                                        <i class="far fa-chevron-right"></i>
-                                        <ul class="header__catalog-subcat">
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Алюминиевые радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Биметаллические радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Стальные панельные радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Стальные трубчатые радиаторы</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="header__catalog-item">
-                                        <a class="header__catalog-link" href="#">Конвекторы</a>
-                                        <i class="far fa-chevron-right"></i>
-                                        <ul class="header__catalog-subcat">
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Кожух универсал</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Конвекторы настенные</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Конвекторы напольные</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Стальные трубчатые Конвекторы встраиваемые</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="header__catalog-item">
-                                        <a class="header__catalog-link" href="#">Арматура</a>
-                                        <i class="far fa-chevron-right"></i>
-                                        <ul class="header__catalog-subcat">
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Алюминиевые радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Биметаллические радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Стальные панельные радиаторы</a></li>
-                                            <li><img src="assets/images/cat1.png" alt="img"><a href="#">Стальные трубчатые радиаторы</a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="header__search">
-                                <div class="header__search-input">
-                                    <input type="search" name="search" placeholder="Поиск по сайту"
-                                        autocomplete="off" />
-                                </div>
-                                <div class="header__search-icon"><i class="far fa-search"></i></div>
-                                <div class="header__search-icon-close"><i class="fal fa-times"></i></div>
-                            </div>
-                        </div>
-                        <div class="header__bottom-right">
-                            <div class="header__action">
-                                <div class="header__compare"><i class="far fa-align-left"></i><span>0</span></div>
-                                <div class="header__favourite"><i class="far fa-heart"></i><span>0</span></div>
-                            </div>
-                            <div class="header__cart"><i class="far fa-cart-shopping"></i>
-                                <p><span>В корзине</span> <span
-                                        style="display:block;font-weight:300;color:#2B2A29;">0</span>
-                                    <span>товаров</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
+        </div>
+    </div>
+</header>

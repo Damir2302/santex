@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initEvents()
     // табы
     initTabs()
-    initAccordion ()
+    initAccordion()
     initSelect()
 });
 
@@ -30,7 +30,7 @@ function initEvents() {
             let clicked = event.target.closest(".show-more")
 
             clicked.previousElementSibling.classList.toggle('active')
-             clicked.classList.toggle('active')
+            clicked.classList.toggle('active')
 
 
         }
@@ -64,16 +64,16 @@ function initTabs() {
     })
 
 }
-function initAccordion () {
-    document.addEventListener('click',(event) => {
+
+function initAccordion() {
+    document.addEventListener('click', (event) => {
         let clicked
-        if(clicked = event.target.closest('.js-menu-accordion__trigger')){
+        if (clicked = event.target.closest('.js-menu-accordion__trigger')) {
             clicked.nextElementSibling.classList.toggle('active')
             clicked.classList.toggle('active')
         }
     })
 }
-
 
 function initSelect() {
 
@@ -95,7 +95,7 @@ function initSelect() {
 
     $(".select").on("click", ".select__item", function () {
         $(".select__head").removeClass("active");
-          $('.overlay').removeClass('active')
+        $('.overlay').removeClass('active')
         $(this).closest(".select__list").removeClass("active");
         $(this)
             .closest(".select__container")
@@ -117,56 +117,6 @@ function initSelect() {
     });
 
 }
-    // Yandex карта на главной,
-    if ($('#contacts-map').length) {
 
-        ymaps.ready(function () {
-            let contactMap = new ymaps.Map("contacts-map", {
-                // Координаты центра карты.
-                // Порядок по умолчнию: «широта, долгота».
-                center: [58.064297, 38.811335],
-                // Уровень масштабирования. Допустимые значения:
-                // от 0 (весь мир) до 19.
-                zoom: 13,
-                // Элементы управления
-                // https://tech.yandex.ru/maps/doc/jsapi/2.1/dg/concepts/controls/standard-docpage/
-                controls: [],
-            });
-            let latitude = document.querySelector("#contacts-map").dataset.latitude;
 
-            let longitude = document.querySelector("#contacts-map").dataset.longitude;
-
-            // Добавление метки
-            // https://tech.yandex.ru/maps/doc/jsapi/2.1/ref/reference/Placemark-docpage/
-            var myPlacemark = new ymaps.Placemark(
-                [latitude, longitude],
-                {
-                    // Хинт показывается при наведении мышкой на иконку метки.
-                    // hintContent: 'Содержимое всплывающей подсказки',
-                    // Балун откроется при клике по метке.
-                    // balloonContent: 'Содержимое балуна'
-                    hintContent: "",
-                },
-                {
-                    iconLayout: "default#image",
-                    // Своё изображение иконки метки.
-
-                    iconImageHref: `assets/images/map.svg`,
-
-                    // Размеры метки.
-                    iconImageSize: [45, 45],
-                    iconImageOffset: [-30, -45],
-                }
-            );
-
-            // После того как метка была создана, добавляем её на карту.
-            contactMap.geoObjects.add(myPlacemark);
-            contactMap
-                .setBounds(contactMap.geoObjects.getBounds(), {checkZoomRange: true})
-                .then(function () {
-                    if (contactMap.getZoom() > 13) contactMap.setZoom(13);
-                });
-            ymapsTouchScroll(contactMap);
-        });
-    }
 

@@ -49,7 +49,8 @@
   }
 }
 
-.form-wrapper {
+.form-wrapper,
+.popup-modal {
   label {
     display: block;
     margin-bottom: 20px;
@@ -86,7 +87,6 @@
   .btn {
     padding: 19px 30px;
     display: inline-block;
-    color: #FFFFFF;
     width: unset;
     margin-bottom: 37px;
   }
@@ -133,4 +133,13 @@
 
 .form-column {
 
+}
+
+.fancybox__content > .carousel__button.is-close {
+  color: $black !important;
+  top: 27px !important;
+  right: 27px !important;
+  svg {
+    filter: none!important;
+  }
 }

@@ -1,0 +1,266 @@
+.footer {
+  padding: 26px 0;
+  background: #223F5A;
+  color: #fff;
+
+  @include breakpoint(lg) {
+    padding: 42px 0 35px;
+  }
+
+  @include breakpoint(xl) {
+    padding: 43px;
+  }
+}
+
+.footer__top {
+
+  @include breakpoint(lg) {
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.footer__nav {
+
+  @include breakpoint(lg) {
+    width: calc(100% / 12 * 4);
+  }
+}
+
+.footer__nav:last-child {
+
+  @include breakpoint(lg) {
+    width: calc(100% / 12 * 6);
+  }
+}
+
+.footer__nav ~ .footer__nav {
+  margin-top: 40px;
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+  }
+}
+
+.footer__nav-title {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C4D7E8;
+}
+
+.footer__nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height: 220px;
+  overflow: hidden;
+}
+
+.footer__nav:last-child .footer__nav-list {
+  max-height: 320px;
+
+  @include breakpoint(lg) {
+    max-height: 250px;
+  }
+
+  @include breakpoint(xl) {
+    max-height: 200px;
+  }
+}
+
+.footer__nav-item {
+  margin-bottom: 20px;
+  width: 50%;
+}
+
+.footer__nav:last-child .footer__nav-item {
+  margin-right: 10px;
+  width: calc(50% - 5px);
+}
+
+.footer__nav-link {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+}
+
+.footer__nav-link:hover {
+  color: $orange;
+  transition: .5s;
+}
+
+.footer__middle {
+  padding: 24px 0 35px;
+  border-top: 1px solid #A4A4A3;
+  border-bottom: 1px solid #A4A4A3;
+
+  @include breakpoint(lg) {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include breakpoint(xl) {
+    align-items: center;
+  }
+}
+
+.footer__text {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 150%;
+  opacity: 0.8;
+
+  @include breakpoint(lg) {
+    width: calc(100% / 12 * 5);
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  @include breakpoint(xl) {
+    width: calc(100% / 12 * 5 - 15px);
+  }
+}
+
+.footer__contacts {
+  margin-top: 20px;
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+    width: calc(100% / 12 * 6 + 20px);
+  }
+
+  @include breakpoint(xl) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% / 12 * 7 - 15px);
+  }
+}
+
+.footer__contacts-block {
+
+  @include breakpoint(lg) {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  @include breakpoint(xl) {
+    justify-content: unset;
+    width: calc(100% / 7 * 5);
+  }
+}
+
+.footer__contacts-item a {
+  margin-left: 24px;
+  font-size: 13px;
+  line-height: 16px;
+}
+
+.footer__contacts-item a:hover {
+  color: $orange;
+  transition: .5s;
+
+}
+
+.footer__contacts-item ~ .footer__contacts-item {
+  margin-top: 10px;
+
+  @include breakpoint(lg) {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+
+  @include breakpoint(xl) {
+    margin-left: 35px;
+  }
+}
+
+.footer__contacts-callback {
+  margin-top: 35px;
+  padding: 11px 20px;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  font-size: 16px;
+  line-height: 19px;
+  color: $blue;
+  border-radius: 5px;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+
+  @include breakpoint(lg) {
+    margin-left: auto;
+    width: 232px;
+    transition: .5s;
+
+  }
+
+  @include breakpoint(xl) {
+    margin-top: 0;
+    padding: 11px;
+    width: calc(100% / 7 * 2 - 35px);
+  }
+}
+
+.footer__contacts-callback:hover {
+  background: transparent;
+  transition: .5s;
+
+  border: 1px solid #FFFFFF;
+}
+
+.footer__contacts-callback:hover * {
+  color: #fff;
+}
+
+.footer__contacts-callback i {
+  margin-right: 30px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.footer__bottom {
+  padding-top: 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 150%;
+
+  @include breakpoint(lg) {
+    padding-top: 37px;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 14px;
+    line-height: 21px;
+  }
+}
+
+.footer__bottom div {
+  margin-top: 10px;
+  a {
+    transition: .5s;
+
+  }
+}
+
+.footer__bottom div a:hover {
+  color: $orange;
+}
+
+.footer__developers span {
+  cursor: default;
+}
+
+.footer__developers a:hover + span {
+  color: $orange;
+}
